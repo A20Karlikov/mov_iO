@@ -9,12 +9,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.simple.moviescomposeapp.ui.CustomTopAppBar
+import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
 fun MoviesListScreen() {
-    val viewModel: MoviesListViewModel = viewModel()
+    val viewModel: MoviesListViewModel = hiltViewModel()
     val movies = viewModel.latestMoviesState.value
 
     Column {
@@ -35,6 +34,6 @@ fun MoviesListScreen() {
 
 @Composable
 @Preview
-fun MoviesListScreenPreview() {
+fun MoviesListScreenPreview(){
     MoviesListScreen()
 }

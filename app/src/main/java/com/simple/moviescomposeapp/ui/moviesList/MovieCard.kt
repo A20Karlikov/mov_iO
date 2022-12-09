@@ -16,11 +16,9 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
 import com.simple.moviescomposeapp.data.models.Movie
 
-@OptIn(ExperimentalCoilApi::class)
 @Composable
 fun MovieCard(movie: Movie) {
     var isExpanded by remember { mutableStateOf(false) }
