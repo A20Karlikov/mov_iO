@@ -5,12 +5,12 @@ data class Movie(
     val title: String,
     val imageUrl: String,
     val releaseDate: String?,
-    val genres: List<Genre>? = null,
+    val genres: List<Genre>,
     val voteAverage: Double?,
     val overview: String?
-) {
-    data class Genre(
-        val id: Int,
-        val name: String
-    )
-}
+)
+
+data class Genre(
+    val id: Int,
+    val name: String
+)
