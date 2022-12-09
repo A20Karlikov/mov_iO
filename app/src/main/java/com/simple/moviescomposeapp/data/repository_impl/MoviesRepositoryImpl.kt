@@ -1,24 +1,26 @@
-package com.simple.moviescomposeapp.data
+package com.simple.moviescomposeapp.data.repository_impl
 
 import com.simple.moviescomposeapp.data.models.Movie
 import com.simple.moviescomposeapp.data.models.MovieByIdResources
 import com.simple.moviescomposeapp.data.models.MoviesListResources
+import com.simple.moviescomposeapp.domain.repository.MovieRepository
 import com.simple.moviescomposeapp.network.ConstantNetwork.IMAGE_URL_START_PART
 import com.simple.moviescomposeapp.network.ConstantNetwork.NO_IMAGE_URL
 import com.simple.moviescomposeapp.network.RetrofitInstance
+import javax.inject.Inject
 
-object MoviesRepository {
+class MoviesRepositoryImpl @Inject constructor() : MovieRepository {
 
     private val moviesByYear: MutableMap<Int, List<Movie>> = mutableMapOf()
 
-    suspend fun getMovies(): List<Movie> = RetrofitInstance.api.getMovies().toDomain()
+    override suspend fun getMovies(): List<Movie> = RetrofitInstance.api.getMovies().toDomain()
 
-    suspend fun getMovieById(id: Int): Movie = RetrofitInstance.api.getMovieById(id).toDomain()
+    override suspend fun getMovieById(id: Int): Movie = RetrofitInstance.api.getMovieById(id).toDomain()
 
-    suspend fun searchMovie(query: String): List<Movie> =
+   override suspend fun searchMovie(query: String): List<Movie> =
         RetrofitInstance.api.searchMovie(query).toDomain()
 
-    suspend fun latestMovies(query: Unit, year: Int): List<Movie> {
+   override suspend fun latestMovies(query: Unit, year: Int): List<Movie> {
         return if (moviesByYear.containsKey(year)) {
             moviesByYear.getValue(year)
         } else {
