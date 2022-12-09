@@ -9,7 +9,7 @@ object MoviesRepository {
 
     private val moviesByYear: MutableMap<Int, List<Movie>> = mutableMapOf()
 
-    suspend fun getMovies(): List<Movie> = RetrofitInstance.api.getMovies().toDomain()
+    suspend fun getTopRatedMovies(): List<Movie> = RetrofitInstance.api.getMovies().toDomain()
 
     suspend fun getMovieById(id: Int): Movie = RetrofitInstance.api.getMovieById(id).toDomain()
 
