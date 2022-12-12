@@ -27,6 +27,7 @@ import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import coil.transform.CircleCropTransformation
 import com.simple.moviescomposeapp.data.models.Movie
+import com.simple.moviescomposeapp.ui.movieDetails.MovieDetailsScreen
 import com.simple.moviescomposeapp.ui.moviesList.MoviesListScreen
 import com.simple.moviescomposeapp.ui.theme.MoviesComposeAppTheme
 
@@ -39,7 +40,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = Color.LightGray
                 ) {
-                    MoviesListScreen()
+                    MovieDetailsScreen()
                 }
             }
         }

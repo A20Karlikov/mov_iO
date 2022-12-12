@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MoviesComposeApp</string>
+    <string name="no_title_message">No Title</string>
+    <string name="no_info_provided">---</string>
 </resources>
