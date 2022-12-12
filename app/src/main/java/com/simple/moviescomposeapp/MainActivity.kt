@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
+import com.simple.moviescomposeapp.ui.homescreen.HomeScreen
 import com.simple.moviescomposeapp.ui.moviesList.MoviesListScreen
 import com.simple.moviescomposeapp.ui.theme.MoviesComposeAppTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = Color.LightGray
                 ) {
-                    MoviesListScreen()
+                    HomeScreen()
                 }
             }
         }
