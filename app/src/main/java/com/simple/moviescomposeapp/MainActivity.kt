@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
             MoviesComposeAppTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = Color.LightGray
+                    color = Color.White
                 ) {
                     HomeScreen()
                 }
