@@ -2,6 +2,7 @@ package com.simple.moviescomposeapp.ui.movieDetails
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.simple.moviescomposeapp.data.models.Movie
@@ -13,12 +14,14 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MovieDetailsViewModel @Inject constructor(
-    private val useCase: GetMovieByIdUseCase
+    private val useCase: GetMovieByIdUseCase,
+    private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
     val currentMovie: MutableState<Movie?> = mutableStateOf(null)
 
     init {
-        getMovieById(436270) // <--- TODO
+        val movieId = savedStateHandle.get<Int>("movie_details_id") ?: 1
+        getMovieById(movieId)
     }
 
     private fun getMovieById(id: Int) {
