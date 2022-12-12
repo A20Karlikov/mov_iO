@@ -7,12 +7,16 @@ import androidx.lifecycle.viewModelScope
 import com.simple.moviescomposeapp.data.models.Movie
 import com.simple.moviescomposeapp.domain.DataResult
 import com.simple.moviescomposeapp.domain.GetTopRatedMoviesUseCase
+import com.simple.moviescomposeapp.domain.GetMoviesUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MoviesListViewModel(): ViewModel() {
-
-    private val useCase = GetTopRatedMoviesUseCase()
-    val latestMoviesState : MutableState<List<Movie>> = mutableStateOf(emptyList())
+@HiltViewModel
+class MoviesListViewModel @Inject constructor(
+    private val useCase: GetMoviesUseCase
+) : ViewModel() {
+    val latestMoviesState: MutableState<List<Movie>> = mutableStateOf(emptyList())
 
     init {
         getTopRatedMovies()

@@ -1,6 +1,5 @@
 package com.simple.moviescomposeapp.ui.moviesList
 
-import android.widget.RatingBar
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -26,7 +25,6 @@ import com.simple.moviescomposeapp.data.models.Movie
 import com.simple.moviescomposeapp.data.models.toValuesList
 import kotlinx.coroutines.coroutineScope
 
-@OptIn(ExperimentalCoilApi::class)
 @Composable
 fun MovieCard(movie: Movie) {
     var isExpanded by remember { mutableStateOf(false) }
