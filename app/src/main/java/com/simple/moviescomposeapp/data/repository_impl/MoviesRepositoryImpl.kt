@@ -37,7 +37,7 @@ private fun MovieByIdResources.toDomain(): Movie = Movie(
     title = this.title,
     imageUrl = this.posterPath?.run { "${IMAGE_URL_START_PART}$this" }
         ?: NO_IMAGE_URL,
-    releaseDate = this.releaseDate,
+    releaseDate = this.releaseDate.substring(startIndex = 0, endIndex = 4),
     genres = this.genres.map { genre -> Genre(genre.id, genre.name) },
     voteAverage = this.voteAverage,
     overview = this.overview,

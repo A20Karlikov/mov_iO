@@ -9,10 +9,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import coil.compose.rememberImagePainter
-import coil.transform.CircleCropTransformation
-import com.simple.moviescomposeapp.data.models.Movie
 import com.simple.moviescomposeapp.ui.movieDetails.MovieDetailsScreen
 import com.simple.moviescomposeapp.ui.moviesList.MoviesListScreen
 import com.simple.moviescomposeapp.ui.theme.MoviesComposeAppTheme
@@ -26,7 +22,7 @@ class MainActivity : ComponentActivity() {
             MoviesComposeAppTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = Color.LightGray
+                    color = Color.White
                 ) {
                     MovieDetailsScreen()
                 }

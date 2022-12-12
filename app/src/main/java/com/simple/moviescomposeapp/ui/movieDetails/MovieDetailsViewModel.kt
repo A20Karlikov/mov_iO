@@ -7,15 +7,18 @@ import androidx.lifecycle.viewModelScope
 import com.simple.moviescomposeapp.data.models.Movie
 import com.simple.moviescomposeapp.domain.DataResult
 import com.simple.moviescomposeapp.domain.GetMovieByIdUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MovieDetailsViewModel : ViewModel() {
-
-    private val useCase = GetMovieByIdUseCase()
+@HiltViewModel
+class MovieDetailsViewModel @Inject constructor(
+    private val useCase: GetMovieByIdUseCase
+) : ViewModel() {
     val currentMovie: MutableState<Movie?> = mutableStateOf(null)
 
     init {
-        getMovieById(155) // <--- TODO
+        getMovieById(830784) // <--- TODO
     }
 
     private fun getMovieById(id: Int) {

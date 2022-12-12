@@ -1,9 +1,10 @@
 package com.simple.moviescomposeapp.domain
 
-import com.simple.moviescomposeapp.data.MoviesRepository
 import com.simple.moviescomposeapp.data.models.Movie
+import com.simple.moviescomposeapp.domain.repository.MovieRepository
+import javax.inject.Inject
 
-class GetMovieByIdUseCase (private val repository : MoviesRepository = MoviesRepository) :
+class GetMovieByIdUseCase @Inject constructor(private val repository: MovieRepository) :
     UseCase<Int, DataResult<Movie>> {
     override suspend fun execute(id: Int): DataResult<Movie> = asDataResult {
         repository.getMovieById(id).also {
