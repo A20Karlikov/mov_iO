@@ -22,12 +22,13 @@ import com.simple.moviescomposeapp.data.models.Movie
 import com.simple.moviescomposeapp.data.models.toValuesList
 
 @Composable
-fun MovieCard(movie: Movie) {
+fun MovieCard(movie: Movie, navigationCallback : (Int) -> Unit) {
     var isExpanded by remember { mutableStateOf(false) }
 
     Card(
         shape = RoundedCornerShape(8.dp),
-        elevation = 4.dp
+        elevation = 4.dp,
+        modifier = Modifier.clickable { navigationCallback(movie.id) }
     ) {
         Box(
             contentAlignment = Alignment.BottomCenter
@@ -127,6 +128,6 @@ fun MovieCardPreview() {
             voteAverage = 9.2,
             releaseDate = null,
             genres = listOf(Genre(18, "Drama"), Genre(53, "Thriller"))
-        )
+        ), {}
     )
 }
