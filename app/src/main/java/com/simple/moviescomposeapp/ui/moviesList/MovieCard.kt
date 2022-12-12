@@ -93,7 +93,7 @@ fun MovieCard(movie: Movie) {
                     }
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         RatingBar(
-                            rating = if (movie.voteAverage != null) (movie.voteAverage / 2).toFloat() else 0F,
+                            rating = if (movie.voteAverage != null) (movie.voteAverage!! / 2).toFloat() else 0F,
                             modifier = Modifier
                                 .padding(8.dp)
                                 .width(120.dp)

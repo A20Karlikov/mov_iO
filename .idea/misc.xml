@@ -20,7 +20,12 @@
         <entry key="../../../../layout/compose-model-1670589155724.xml" value="0.3032094594594595" />
         <entry key="../../../../layout/compose-model-1670595452231.xml" value="0.33240740740740743" />
         <entry key="../../../../layout/compose-model-1670835521712.xml" value="0.33240740740740743" />
+        <entry key="../../../../layout/compose-model-1670835966039.xml" value="0.25" />
+        <entry key="../../../../layout/compose-model-1670837074747.xml" value="0.45" />
         <entry key="app/src/main/res/drawable-anydpi/ic_budget.xml" value="0.1315" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_duration.xml" value="0.172" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_rating.xml" value="0.172" />
+        <entry key="app/src/main/res/drawable-anydpi/ic_release_date.xml" value="0.172" />
       </map>
     </option>
   </component>
