@@ -18,7 +18,7 @@ class MovieDetailsViewModel @Inject constructor(
     val currentMovie: MutableState<Movie?> = mutableStateOf(null)
 
     init {
-        getMovieById(830784) // <--- TODO
+        getMovieById(436270) // <--- TODO
     }
 
     private fun getMovieById(id: Int) {

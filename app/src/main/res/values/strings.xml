@@ -6,4 +6,5 @@
     <string name="movie_detail_rating">Rating</string>
     <string name="movie_detail_budget">Budget</string>
     <string name="movie_detail_duration">Duration</string>
+    <string name="suggest_movie_btn">SUGGEST</string>
 </resources>
