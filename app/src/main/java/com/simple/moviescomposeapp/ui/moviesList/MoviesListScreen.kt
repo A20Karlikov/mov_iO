@@ -13,7 +13,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 @Composable
 fun MoviesListScreen() {
     val viewModel: MoviesListViewModel = hiltViewModel()
-    val movies = viewModel.latestMoviesState.value
+    val movies = viewModel.topRatedMoviesState.value
 
     LazyColumn(
         modifier = Modifier

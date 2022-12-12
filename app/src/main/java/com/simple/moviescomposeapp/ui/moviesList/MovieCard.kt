@@ -16,14 +16,10 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberAsyncImagePainter
-import coil.compose.rememberImagePainter
-import com.simple.moviescomposeapp.data.MoviesRepository
 import com.simple.moviescomposeapp.data.models.Genre
 import com.simple.moviescomposeapp.data.models.Movie
 import com.simple.moviescomposeapp.data.models.toValuesList
-import kotlinx.coroutines.coroutineScope
 
 @Composable
 fun MovieCard(movie: Movie) {
