@@ -4,7 +4,7 @@ import com.simple.moviescomposeapp.data.models.Movie
 
 interface MovieRepository {
 
-    suspend fun getMovies(): List<Movie>
+    suspend fun getTopRatedMovies(): List<Movie>
 
     suspend fun getMovieById(id: Int): Movie
 

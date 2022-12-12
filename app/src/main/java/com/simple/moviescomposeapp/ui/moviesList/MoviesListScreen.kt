@@ -15,7 +15,7 @@ import com.simple.moviescomposeapp.ui.CustomTopAppBar
 @Composable
 fun MoviesListScreen() {
     val viewModel: MoviesListViewModel = hiltViewModel()
-    val movies = viewModel.latestMoviesState.value
+    val movies = viewModel.topRatedMoviesState.value
 
     Column {
         CustomTopAppBar()
