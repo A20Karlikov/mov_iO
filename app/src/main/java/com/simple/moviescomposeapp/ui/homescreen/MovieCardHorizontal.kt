@@ -1,6 +1,7 @@
 package com.simple.moviescomposeapp.ui.homescreen
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
@@ -21,7 +22,7 @@ import com.simple.moviescomposeapp.data.models.Movie
 
 @OptIn(ExperimentalUnitApi::class)
 @Composable
-fun MovieCardHorizontal(movie: Movie) {
+fun MovieCardHorizontal(movie: Movie, navigationCallback: (Int) -> Unit) {
 
     Card(
         shape = RoundedCornerShape(8.dp),
@@ -29,6 +30,7 @@ fun MovieCardHorizontal(movie: Movie) {
         modifier = Modifier
             .padding(10.dp)
             .size(width = 150.dp, height = 250.dp)
+            .clickable { navigationCallback(movie.id) }
     ) {
         Box(
             contentAlignment = Alignment.BottomCenter
@@ -85,6 +87,6 @@ fun MovieCardHorizontalPreview() {
             voteAverage = 9.2,
             releaseDate = null,
             genres = listOf(Genre(18, "Drama"), Genre(53, "Thriller"))
-        )
+        ), {}
     )
 }
