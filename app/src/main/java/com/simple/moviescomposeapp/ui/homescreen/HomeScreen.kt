@@ -13,12 +13,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.ExperimentalUnitApi
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.simple.moviescomposeapp.R
 import com.simple.moviescomposeapp.data.models.Movie
 import com.simple.moviescomposeapp.ui.CustomTopAppBar
 import com.simple.moviescomposeapp.ui.theme.MoviesComposeAppTheme
@@ -41,7 +43,7 @@ fun HomeScreen() {
             items(1) {
                 Column(Modifier.padding(12.dp)) {
                     Text(
-                        text = "Upcoming Events",
+                        text = stringResource(R.string.upcoming_events_header),
                         modifier = Modifier
                             .wrapContentSize(align = Alignment.CenterStart)
                             .background(Color.Black, CircleShape)
@@ -63,7 +65,7 @@ fun HomeScreen() {
                     }
 
                     Text(
-                        text = "Latest Movies",
+                        text = stringResource(R.string.latest_movies_header),
                         modifier = Modifier
                             .wrapContentSize(align = Alignment.CenterStart)
                             .background(Color.Black, CircleShape)
@@ -78,7 +80,7 @@ fun HomeScreen() {
                     }
 
                     Text(
-                        text = "Top Rated Movies",
+                        text = stringResource(R.string.top_rated_movies_header),
                         modifier = Modifier
                             .wrapContentSize(align = Alignment.CenterStart)
                             .background(Color.Black, CircleShape)
