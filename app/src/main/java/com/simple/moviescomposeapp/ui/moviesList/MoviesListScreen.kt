@@ -13,7 +13,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.simple.moviescomposeapp.ui.CustomTopAppBar
 
 @Composable
-fun MoviesListScreen() {
+fun MoviesListScreen(navigationCallback: (Int) -> Unit) {
     val viewModel: MoviesListViewModel = hiltViewModel()
     val movies = viewModel.topRatedMoviesState.value
 
@@ -26,7 +26,7 @@ fun MoviesListScreen() {
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
             items(movies) { movie ->
-                MovieCard(movie)
+                MovieCard(movie, navigationCallback)
             }
         }
     }
@@ -36,5 +36,5 @@ fun MoviesListScreen() {
 @Composable
 @Preview
 fun MoviesListScreenPreview(){
-    MoviesListScreen()
+    MoviesListScreen( {} )
 }

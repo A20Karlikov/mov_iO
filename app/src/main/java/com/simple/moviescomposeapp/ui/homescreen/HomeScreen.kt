@@ -16,6 +16,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.*
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.simple.moviescomposeapp.R
 import com.simple.moviescomposeapp.data.models.Movie
@@ -24,8 +25,8 @@ import com.simple.moviescomposeapp.ui.theme.MoviesComposeAppTheme
 
 @OptIn(ExperimentalUnitApi::class)
 @Composable
-fun HomeScreen() {
-    val viewModel: HomeScreenViewModel = viewModel()
+fun HomeScreen(navigationCallback: (Int) -> Unit) {
+    val viewModel: HomeScreenViewModel = hiltViewModel()
 
     val topRatedMovies = viewModel.topRatedMoviesState.value
     val latestMovies = viewModel.latestMoviesState.value
@@ -55,10 +56,10 @@ fun HomeScreen() {
                         // if no upcoming events -> TODO()
                         if (topRatedMovies.isEmpty()) items(topRatedMovies) { movie ->
                             MovieCardHorizontal(
-                                movie
+                                movie, navigationCallback
                             )
                         }
-                        else items(topRatedMovies) { movie -> MovieCardHorizontal(movie) }
+                        else items(topRatedMovies) { movie -> MovieCardHorizontal(movie, navigationCallback) }
                     }
 
                     Text(
@@ -73,7 +74,7 @@ fun HomeScreen() {
                         color = Color.White
                     )
                     LazyRow {
-                        items(latestMovies) { movie -> MovieCardHorizontal(movie) }
+                        items(latestMovies) { movie -> MovieCardHorizontal(movie, navigationCallback) }
                     }
 
                     Text(
@@ -89,7 +90,7 @@ fun HomeScreen() {
                     )
 
                     LazyRow {
-                        items(topRatedMovies) { movie -> MovieCardHorizontal(movie) }
+                        items(topRatedMovies) { movie -> MovieCardHorizontal(movie, navigationCallback) }
                     }
                 }
             }
@@ -103,6 +104,6 @@ fun HomeScreen() {
 @Composable
 fun HomeScreenPreview() {
     MoviesComposeAppTheme {
-        HomeScreen()
+        HomeScreen( {} )
     }
 }

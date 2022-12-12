@@ -28,15 +28,14 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberAsyncImagePainter
 import com.simple.moviescomposeapp.R
 import com.simple.moviescomposeapp.R.string
+import com.simple.moviescomposeapp.data.models.Movie
 import com.simple.moviescomposeapp.data.models.toValuesList
 import com.simple.moviescomposeapp.ui.CustomTopAppBar
 import com.simple.moviescomposeapp.ui.theme.Shapes
 import java.text.SimpleDateFormat
 
 @Composable
-fun MovieDetailsScreen() {
-    val viewModel: MovieDetailsViewModel = viewModel()
-    val currentMovie = viewModel.currentMovie.value
+fun MovieDetailsScreen(currentMovie: Movie?) {
 
     Column {
         CustomTopAppBar()
@@ -63,10 +62,4 @@ fun MovieDetailsScreen() {
             }
         }
     }
-}
-
-@Composable
-@Preview
-fun MovieDetailsScreenPreview() {
-    MovieDetailsScreen()
 }
