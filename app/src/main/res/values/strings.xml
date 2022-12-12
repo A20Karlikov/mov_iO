@@ -8,4 +8,7 @@
     <string name="movie_detail_budget">Budget</string>
     <string name="movie_detail_duration">Duration</string>
     <string name="suggest_movie_btn">SUGGEST</string>
+    <string name="upcoming_events_header">Upcoming Events</string>
+    <string name="latest_movies_header">Latest Movies</string>
+    <string name="top_rated_movies_header">Top Rated Movies</string>
 </resources>
