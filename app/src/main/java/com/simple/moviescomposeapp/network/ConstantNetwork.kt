@@ -6,5 +6,5 @@ object ConstantNetwork {
 
     const val API_KEY: String = "8a321dd6371474e930acd74d91c2bd84"
 
-    const val NO_IMAGE_URL: String = "https://bflix.biz/no-poster.png"
+    const val NO_IMAGE_URL: String = "https://www.prokerala.com/movies/assets/img/no-poster-available.jpg"
 }
