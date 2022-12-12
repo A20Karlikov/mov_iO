@@ -41,7 +41,7 @@ fun MovieCard(movie: Movie) {
                 contentScale = ContentScale.Crop
             )
             Surface(
-                color = Color.Black.copy(alpha = 0.7F)
+                color = MaterialTheme.colors.primary.copy(alpha = 0.7F)
             ) {
                 Column(
                     modifier = Modifier.padding(bottom = 8.dp)
@@ -50,7 +50,7 @@ fun MovieCard(movie: Movie) {
                         Text(
                             text = movie.title,
                             style = MaterialTheme.typography.h5,
-                            color = Color.White,
+                            color = MaterialTheme.colors.secondary,
                             modifier = Modifier
                                 .padding(start = 8.dp, end = 8.dp, top = 8.dp)
                                 .weight(6F),
@@ -63,7 +63,7 @@ fun MovieCard(movie: Movie) {
                             else
                                 Icons.Default.KeyboardArrowDown,
                             contentDescription = "Expand/Collapse icon",
-                            tint = Color.White.copy(alpha = 0.7F),
+                            tint = MaterialTheme.colors.secondary.copy(alpha = 0.7F),
                             modifier = Modifier
                                 .weight(1F)
                                 .padding(horizontal = 8.dp, vertical = 4.dp)
@@ -73,7 +73,7 @@ fun MovieCard(movie: Movie) {
                     }
                     Text(
                         text = movie.genres.toValuesList().joinToString(", "),
-                        color = Color.White.copy(alpha = 0.7F),
+                        color = MaterialTheme.colors.secondary.copy(alpha = 0.7F),
                         style = MaterialTheme.typography.subtitle2,
                         modifier = Modifier
                             .padding(8.dp)
@@ -87,7 +87,7 @@ fun MovieCard(movie: Movie) {
                                     .padding(horizontal = 8.dp),
                                 maxLines = 5,
                                 overflow = TextOverflow.Ellipsis,
-                                color = Color.White.copy(alpha = 0.7F)
+                                color = MaterialTheme.colors.secondary.copy(alpha = 0.7F)
                             )
                         }
                     }
@@ -101,7 +101,7 @@ fun MovieCard(movie: Movie) {
                         )
                         Text(
                             text = if (movie.voteAverage != null) "(${movie.voteAverage})" else "---",
-                            color = Color.White.copy(alpha = 0.7F),
+                            color = MaterialTheme.colors.secondary.copy(alpha = 0.7F),
                             style = MaterialTheme.typography.body2
                         )
                     }

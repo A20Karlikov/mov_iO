@@ -57,7 +57,7 @@ fun MovieDetailsScreen() {
                     .padding(16.dp)
                     .fillMaxWidth(),
                 shape = RoundedCornerShape(6.dp),
-                color = Color.White
+                color = MaterialTheme.colors.secondary
             ) {
                 currentMovie?.run { MovieInfo(movie = currentMovie) }
             }
