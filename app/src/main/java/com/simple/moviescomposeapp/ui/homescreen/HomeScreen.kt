@@ -15,10 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.ExperimentalUnitApi
-import androidx.compose.ui.unit.TextUnit
-import androidx.compose.ui.unit.TextUnitType
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.*
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.simple.moviescomposeapp.R
 import com.simple.moviescomposeapp.data.models.Movie
@@ -50,7 +47,7 @@ fun HomeScreen() {
                             .border(1.dp, Color.Black, CircleShape)
                             .padding(start = 12.dp, end = 12.dp),
                         style = MaterialTheme.typography.subtitle1,
-                        fontSize = TextUnit(24f, TextUnitType.Sp),
+                        fontSize = 24.sp,
                         color = Color.White
                     )
 
@@ -72,7 +69,7 @@ fun HomeScreen() {
                             .border(1.dp, Color.Black, CircleShape)
                             .padding(start = 12.dp, end = 12.dp),
                         style = MaterialTheme.typography.subtitle1,
-                        fontSize = TextUnit(24f, TextUnitType.Sp),
+                        fontSize = 24.sp,
                         color = Color.White
                     )
                     LazyRow {
@@ -87,7 +84,7 @@ fun HomeScreen() {
                             .border(1.dp, Color.Black, CircleShape)
                             .padding(start = 12.dp, end = 12.dp),
                         style = MaterialTheme.typography.subtitle1,
-                        fontSize = TextUnit(24f, TextUnitType.Sp),
+                        fontSize = 24.sp,
                         color = Color.White
                     )
 

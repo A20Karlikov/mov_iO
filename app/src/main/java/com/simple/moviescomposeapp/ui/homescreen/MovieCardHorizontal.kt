@@ -14,10 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.ExperimentalUnitApi
-import androidx.compose.ui.unit.TextUnit
-import androidx.compose.ui.unit.TextUnitType
-import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.*
 import coil.compose.rememberAsyncImagePainter
 import com.simple.moviescomposeapp.data.models.Genre
 import com.simple.moviescomposeapp.data.models.Movie
@@ -60,7 +57,7 @@ fun MovieCardHorizontal(movie: Movie) {
                             color = Color.White,
                             modifier = Modifier
                                 .padding(start = 8.dp, end = 8.dp, top = 8.dp),
-                            fontSize = TextUnit(16f, TextUnitType.Sp),
+                            fontSize = 16.sp,
                             maxLines = 2,
                             overflow = TextOverflow.Ellipsis
                         )
