@@ -1,5 +1,6 @@
 package com.simple.moviescomposeapp.data.repository_impl
 
+import com.simple.moviescomposeapp.data.models.*
 import com.simple.moviescomposeapp.data.MoviesAPI
 import com.simple.moviescomposeapp.data.models.Movie
 import com.simple.moviescomposeapp.data.models.MovieByIdResources
@@ -13,7 +14,7 @@ class MoviesRepositoryImpl @Inject constructor(private val api: MoviesAPI) : Mov
 
     private val moviesByYear: MutableMap<Int, List<Movie>> = mutableMapOf()
 
-    override suspend fun getMovies(): List<Movie> = api.getMovies().toDomain()
+    override suspend fun getTopRatedMovies(): List<Movie> = api.getMovies().toDomain()
 
     override suspend fun getMovieById(id: Int): Movie = api.getMovieById(id).toDomain()
 
@@ -37,7 +38,7 @@ private fun MovieByIdResources.toDomain(): Movie = Movie(
     imageUrl = this.posterPath?.run { "${IMAGE_URL_START_PART}$this" }
         ?: NO_IMAGE_URL,
     releaseDate = this.releaseDate,
-    genres = this.genres.map { genre -> Movie.Genre(genre.id, genre.name) },
+    genres = this.genres.map { genre -> Genre(genre.id, genre.name) },
     voteAverage = this.voteAverage,
     overview = this.overview
 )
@@ -51,6 +52,7 @@ private fun MoviesListResources.toDomain(): List<Movie> =
             imageUrl = it.posterPath?.run { "${IMAGE_URL_START_PART}$this" }
                 ?: NO_IMAGE_URL,
             releaseDate = it.releaseDate,
+            genres = it.genres.map { genre -> Genre(genre, Genres.values().first { genre == it.id }.value) } ,
             voteAverage = it.voteAverage,
             overview = it.overview
         )
