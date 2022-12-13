@@ -18,8 +18,6 @@ fun MoviesListScreen(navigationCallback: (Int) -> Unit) {
     val movies = viewModel.topRatedMoviesState.value
 
     Column {
-        CustomTopAppBar()
-
         LazyColumn(
             modifier = Modifier
                 .padding(12.dp),
@@ -30,11 +28,10 @@ fun MoviesListScreen(navigationCallback: (Int) -> Unit) {
             }
         }
     }
-
 }
 
 @Composable
 @Preview
 fun MoviesListScreenPreview(){
-    MoviesListScreen( {} )
+   // MoviesListScreen() {}
 }
