@@ -1,30 +1,49 @@
 package com.simple.moviescomposeapp.ui.moviesList
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.simple.moviescomposeapp.ui.CustomTopAppBar
+import com.simple.moviescomposeapp.ui.SearchAppBar
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.launch
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun MoviesListScreen(navigationCallback: (Int) -> Unit) {
     val viewModel: MoviesListViewModel = hiltViewModel()
-    val movies = viewModel.topRatedMoviesState.value
+    val movies = viewModel.moviesState.value
 
-    Column {
-        CustomTopAppBar()
+    val listState = rememberLazyListState()
+    val coroutineScope = rememberCoroutineScope()
+
+    Scaffold(
+        topBar =  { SearchAppBar(
+            text = viewModel.searchTextState.value,
+            onTextChange = { viewModel.updateSearchTextState(it) },
+            onSearchClicked = { viewModel.searchMovies() }
+        )}
+    ) {
 
         LazyColumn(
             modifier = Modifier
                 .padding(12.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp)
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+            state = listState
         ) {
+            coroutineScope.launch {
+                listState.animateScrollToItem(0)
+            }
             items(movies) { movie ->
                 MovieCard(movie, navigationCallback)
             }
@@ -35,6 +54,6 @@ fun MoviesListScreen(navigationCallback: (Int) -> Unit) {
 
 @Composable
 @Preview
-fun MoviesListScreenPreview(){
-    MoviesListScreen( {} )
+fun MoviesListScreenPreview() {
+    MoviesListScreen({})
 }

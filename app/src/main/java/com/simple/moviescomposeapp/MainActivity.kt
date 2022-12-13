@@ -41,7 +41,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MoviOApp() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "home_screen") {
+    NavHost(navController = navController, startDestination = "movies_list_screen") {
         composable(route = "movies_list_screen") {
             MoviesListScreen() { movieId ->
                 navController.navigate("movie_details_screen/$movieId")
