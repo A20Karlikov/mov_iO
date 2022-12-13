@@ -11,4 +11,17 @@
     <string name="upcoming_events_header">Upcoming Events</string>
     <string name="latest_movies_header">Latest Movies</string>
     <string name="top_rated_movies_header">Top Rated Movies</string>
+    <string name="main_functionality_header">Main Functionality:</string>
+    <string name="main_functionality_information">- Search/Browse movies \n
+                        - Create an event\n
+                        - Suggest movies for an event\n
+                        - History of movies that are watched\n</string>
+    <string name="langueage_framework_header"><![CDATA[Programming language & Frameworks:]]></string>
+    <string name="langueage_framework_information">- Kotlin with Jetpack Compose \n
+                        - MVVM Structure\n
+                        - Dependency injection with the help of Hilt\n
+                        - Retrofit for making the API calls\n
+                        - Navigation\n
+                        - Free Movie API to get the data\n</string>
+    <string name="about_screen_header">About The App</string>
 </resources>
