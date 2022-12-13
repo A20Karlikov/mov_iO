@@ -4,6 +4,8 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.SnackbarDefaults.backgroundColor
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
@@ -33,7 +35,7 @@ fun CustomTopAppBar(s: String = stringResource(R.string.movio_title)) {
                     s,
                     modifier = Modifier
                         .border(
-                            BorderStroke(1.dp, Color.White),
+                            BorderStroke(1.dp, MaterialTheme.colors.secondary),
                             shape = CircleShape
                         )
                         .padding(8.dp),
@@ -43,8 +45,8 @@ fun CustomTopAppBar(s: String = stringResource(R.string.movio_title)) {
         },
         modifier = Modifier
             .fillMaxWidth(),
-        backgroundColor = Color.Black,
-        contentColor = Color.White
+        backgroundColor = MaterialTheme.colors.primary,
+        contentColor = MaterialTheme.colors.secondary
     )
 
 }
