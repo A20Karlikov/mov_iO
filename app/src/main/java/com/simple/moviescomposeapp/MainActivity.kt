@@ -3,14 +3,12 @@ package com.simple.moviescomposeapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -20,6 +18,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.simple.moviescomposeapp.ui.BottomNavigationBar
 import com.simple.moviescomposeapp.ui.CustomTopAppBar
+import com.simple.moviescomposeapp.ui.aboutscreen.AboutScreen
 import com.simple.moviescomposeapp.ui.eventscreen.EventScreen
 import com.simple.moviescomposeapp.ui.historyscreen.HistoryScreen
 import com.simple.moviescomposeapp.ui.homescreen.HomeScreen
@@ -75,11 +74,14 @@ fun MoviOApp(navController: NavHostController) {
             MovieDetailsScreen(currentMovie = viewModel.currentMovie.value)
         }
 
-        composable("event_screen"){
+        composable("event_screen") {
             EventScreen()
         }
-        composable("history_screen"){
+        composable("history_screen") {
             HistoryScreen()
+        }
+        composable("about_screen") {
+            AboutScreen()
         }
     }
 }
