@@ -4,7 +4,6 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.SnackbarDefaults.backgroundColor
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
@@ -19,7 +18,7 @@ import com.simple.moviescomposeapp.R
 import com.simple.moviescomposeapp.ui.theme.MoviesComposeAppTheme
 
 @Composable
-fun CustomTopAppBar() {
+fun CustomTopAppBar(s: String = stringResource(R.string.movio_title)) {
     TopAppBar(
         title =
         {
@@ -31,7 +30,7 @@ fun CustomTopAppBar() {
                     .padding(end = 12.dp)
             ) {
                 Text(
-                    stringResource(R.string.movio_title),
+                    s,
                     modifier = Modifier
                         .border(
                             BorderStroke(1.dp, Color.White),
@@ -54,6 +53,6 @@ fun CustomTopAppBar() {
 @Composable
 fun CustomTopAppBarPreview() {
     MoviesComposeAppTheme {
-        CustomTopAppBar()
+        CustomTopAppBar("Search")
     }
 }
