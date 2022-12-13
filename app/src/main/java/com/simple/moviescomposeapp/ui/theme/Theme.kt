@@ -9,18 +9,19 @@ import androidx.compose.ui.graphics.Color
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 private val DarkColorPalette = darkColors(
-    primary = Purple200,
-    primaryVariant = Purple700,
-    secondary = Teal200
+    primary = Color.Black,
+    primaryVariant = Color.LightGray,
+    secondary = Color.White,
+    background = Color.White
 )
 
 private val LightColorPalette = lightColors(
-    primary = Purple500,
-    primaryVariant = Purple700,
-    secondary = Teal200
+    primary = Color.Black,
+    primaryVariant = Color.LightGray,
+    secondary = Color.White,
+    background = Color.White
 
     /* Other default colors to override
-    background = Color.White,
     surface = Color.White,
     onPrimary = Color.White,
     onSecondary = Color.Black,
@@ -34,7 +35,6 @@ fun MoviesComposeAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
-
     val systemUiController = rememberSystemUiController()
 
     systemUiController.setStatusBarColor(Color.Black)
