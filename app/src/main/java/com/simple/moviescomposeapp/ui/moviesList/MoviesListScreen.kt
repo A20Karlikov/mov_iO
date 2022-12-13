@@ -49,7 +49,6 @@ fun MoviesListScreen(navigationCallback: (Int) -> Unit) {
             }
         }
     }
-
 }
 
 @Composable

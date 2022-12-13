@@ -20,19 +20,19 @@ import com.simple.moviescomposeapp.R
 import com.simple.moviescomposeapp.ui.theme.MoviesComposeAppTheme
 
 @Composable
-fun CustomTopAppBar() {
+fun CustomTopAppBar(s: String = stringResource(R.string.movio_title)) {
     TopAppBar(
         title =
         {
             Row(
-                verticalAlignment = Alignment.CenterVertically,
+                verticalAlignment = Alignment.CenterVertically ,
                 horizontalArrangement = Arrangement.Center,
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(end = 12.dp)
             ) {
                 Text(
-                    stringResource(R.string.movio_title),
+                    s,
                     modifier = Modifier
                         .border(
                             BorderStroke(1.dp, MaterialTheme.colors.secondary),
@@ -55,6 +55,6 @@ fun CustomTopAppBar() {
 @Composable
 fun CustomTopAppBarPreview() {
     MoviesComposeAppTheme {
-        CustomTopAppBar()
+        CustomTopAppBar("Search")
     }
 }
