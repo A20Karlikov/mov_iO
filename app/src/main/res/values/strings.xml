@@ -24,4 +24,6 @@
                         - Navigation\n
                         - Free Movie API to get the data\n</string>
     <string name="about_screen_header">About The App</string>
+    <string name="github_project_header">GitHub Project:</string>
+    <string name="github_project_uri">https://github.com/A20Karlikov/mov_iO</string>
 </resources>
