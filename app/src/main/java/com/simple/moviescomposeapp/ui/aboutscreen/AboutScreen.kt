@@ -25,14 +25,15 @@ import com.simple.moviescomposeapp.ui.theme.DarkGreen
 @Composable
 fun AboutScreen() {
 
-    Surface(modifier = Modifier.wrapContentSize()) {
+    Surface(modifier = Modifier.fillMaxSize(1f)) {
         val uriHandler = LocalUriHandler.current
 
-        LazyColumn(modifier = Modifier.padding(bottom = 54.dp)) {
+        LazyColumn(modifier = Modifier.fillMaxSize().padding(bottom = 65.dp , start = 32.dp , end = 32.dp)) {
             items(1) {
 
                 Column(
-                    horizontalAlignment = Alignment.CenterHorizontally
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
                 ) {
                     Text(
                         text = stringResource(R.string.about_screen_header),
@@ -46,7 +47,7 @@ fun AboutScreen() {
                         painter = painterResource(id = R.drawable.ic_phone_icon),
                         contentDescription = null,
                         modifier = Modifier
-                            .size(70.dp, 70.dp)
+                            .size(70.dp)
                             .padding(bottom = 12.dp)
                     )
 
@@ -85,7 +86,7 @@ fun CardHolderInformation(
         backgroundColor = Color.Black,
         contentColor = Color.White,
         modifier = Modifier
-            .wrapContentSize()
+            .wrapContentSize(align = Alignment.Center)
             .padding(6.dp)
     ) {
         Column {
@@ -93,7 +94,7 @@ fun CardHolderInformation(
                 text = header,
                 style = MaterialTheme.typography.h6,
                 modifier = Modifier
-                    .wrapContentSize()
+                    .wrapContentSize(align = Alignment.Center)
                     .padding(6.dp)
                     .align(Alignment.CenterHorizontally),
                 textAlign = TextAlign.Center
@@ -106,7 +107,7 @@ fun CardHolderInformation(
         backgroundColor = Color.LightGray,
         contentColor = Color.Black,
         modifier = Modifier
-            .wrapContentSize()
+            .wrapContentSize(align = Alignment.Center)
             .padding(12.dp)
             .shadow(elevation = 4.dp, shape = CircleShape)
     ) {
