@@ -30,10 +30,9 @@ fun AboutScreen() {
                 textDecoration = TextDecoration.Underline,
                 fontWeight = Bold,
                 modifier = Modifier.padding(12.dp)
-
             )
             Icon(
-                painter = painterResource(id = R.drawable.ic_question_mark),
+                painter = painterResource(id = R.drawable.ic_phone_icon),
                 contentDescription = null,
                 modifier = Modifier
                     .size(70.dp, 70.dp)
