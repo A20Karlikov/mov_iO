@@ -4,10 +4,7 @@ import android.annotation.SuppressLint
 import android.graphics.drawable.Icon
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyListScope
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.lazy.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -44,6 +41,7 @@ fun MoviesListScreen(navigationCallback: (Int) -> Unit) {
     val focusManager = LocalFocusManager.current
     val listState = rememberLazyListState()
     val coroutineScope = rememberCoroutineScope()
+    val defaultTextMessageHeightSize by animateDpAsState(targetValue = if (listState.isScrolled) 0.dp else 18.dp)
 
     Column() {
 
@@ -59,7 +57,8 @@ fun MoviesListScreen(navigationCallback: (Int) -> Unit) {
             text = stringResource(string.default_search_message),
             modifier = Modifier
                 .padding(start = 12.dp, end = 12.dp, top = 8.dp)
-                .fillMaxWidth(),
+                .fillMaxWidth()
+                .height(defaultTextMessageHeightSize),
             style = MaterialTheme.typography.subtitle2,
             color = MaterialTheme.colors.primary
         )
@@ -85,3 +84,6 @@ fun MoviesListScreen(navigationCallback: (Int) -> Unit) {
 fun MoviesListScreenPreview() {
     MoviesListScreen {}
 }
+
+val LazyListState.isScrolled: Boolean
+    get() = firstVisibleItemIndex > 0 || firstVisibleItemScrollOffset > 0
