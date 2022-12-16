@@ -60,11 +60,10 @@ class MoviesListViewModel @Inject constructor(
         timer.cancel()
         timer = Timer()
         timer.schedule(1500) {
-            if (newValue.trim().length >= SEARCH_MIN_CHARS) {
+            if (newValue.trim().length >= SEARCH_MIN_CHARS)
                 searchMovies()
-            } else if (newValue.trim().isEmpty()) {
+            else
                 getLatestMovies()
-            }
         }
     }
 }

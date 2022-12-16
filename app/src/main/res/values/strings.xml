@@ -11,4 +11,5 @@
     <string name="upcoming_events_header">Upcoming Events</string>
     <string name="latest_movies_header">Latest Movies</string>
     <string name="top_rated_movies_header">Top Rated Movies</string>
+    <string name="default_search_message">Results for this year\'s latest releases:</string>
 </resources>
